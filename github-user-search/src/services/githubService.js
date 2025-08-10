@@ -1,22 +1,18 @@
-import axios from 'axios';
+import React from 'react';
+import Search from './components/Search';
+import './App.css';
 
-const API_BASE_URL = 'https://api.github.com';
+function App() {
+  return (
+    <div className="App">
+      <header className="bg-gray-800 text-white py-4">
+        <h1 className="text-2xl font-bold text-center">GitHub User Search</h1>
+      </header>
+      <main className="container mx-auto py-8">
+        <Search />
+      </main>
+    </div>
+  );
+}
 
-/**
- * Fetches user data from GitHub API
- * @param {string} username - GitHub username to search for
- * @returns {Promise<Object>} - User data from GitHub API
- */
-export const fetchUserData = async (username) => {
-  try {
-    const response = await axios.get(`${API_BASE_URL}/users/${username}`);
-    return response.data;
-  } catch (error) {
-    if (error.response && error.response.status === 404) {
-      throw new Error('User not found');
-    }
-    throw new Error('Failed to fetch user data');
-  }
-};
-
-export default { fetchUserData };
+export default App;
