@@ -1,35 +1,65 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import SearchBar from './components/SearchBar';
+import UserCard from './components/UserCard';
+import ErrorMessage from './components/ErrorMessage';
+import { getUserDetails } from './services/githubApi';
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+interface User {
+  login: string;
+  id: number;
+  avatar_url: string;
+  html_url: string;
+  name: string | null;
+  location: string | null;
+  bio: string | null;
+  public_repos: number;
+  followers: number;
+  following: number;
 }
 
-export default App
+function App() {
+  const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSearch = async (username: string) => {
+    setLoading(true);
+    setError(null);
+    setUser(null);
+
+    try {
+      const userData = await getUserDetails(username);
+      setUser(userData);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to fetch user');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="app">
+      <header className="app-header">
+        <h1>GitHub User Search</h1>
+        <p>Search for GitHub users and view their profiles</p>
+      </header>
+
+      <main className="app-main">
+        <SearchBar onSearch={handleSearch} loading={loading} />
+        
+        {error && <ErrorMessage message={error} />}
+        
+        {loading && <div className="loading">Searching for user...</div>}
+        
+        {user && <UserCard user={user} />}
+      </main>
+
+      <footer className="app-footer">
+        <p>Built with React + TypeScript</p>
+      </footer>
+    </div>
+  );
+}
+
+export default App;
