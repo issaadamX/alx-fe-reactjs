@@ -10,9 +10,17 @@ const githubApi = axios.create({
   },
 });
 
-export const searchUsers = async (username: string) => {
+export const searchUsers = async (params: { username: string; location?: string; minRepos?: string; page?: number }) => {
   try {
-    const response = await githubApi.get(`/search/users?q=${username}`);
+    let query = params.username;
+    if (params.location) {
+      query += `+location:${params.location}`;
+    }
+    if (params.minRepos) {
+      query += `+repos:>=${params.minRepos}`;
+    }
+    const page = params.page || 1;
+    const response = await githubApi.get(`/search/users?q=${encodeURIComponent(query)}&page=${page}&per_page=30`);
     return response.data;
   } catch (error) {
     console.error('Error searching users:', error);
