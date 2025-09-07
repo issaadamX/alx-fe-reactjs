@@ -88,7 +88,9 @@ function AddRecipeForm() {
       };
 
       console.log('New recipe submitted:', newRecipe);
-      alert('Recipe submitted successfully! (Check console for details)');
+
+      // Show success message instead of alert
+      setSuccessMessage('Recipe submitted successfully!');
 
       // Reset form
       setFormData({
@@ -111,9 +113,12 @@ function AddRecipeForm() {
           Add New Recipe
         </h1>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-6" noValidate>
           <div>
-            <label htmlFor="title" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label
+              htmlFor="title"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+            >
               Recipe Title *
             </label>
             <input
@@ -122,16 +127,24 @@ function AddRecipeForm() {
               name="title"
               value={formData.title}
               onChange={handleChange}
-              className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 ${
-                errors.title ? 'border-red-500' : 'border-gray-300'
-              }`}
+              className={`${inputClassNames} ${errors.title ? 'border-red-500' : 'border-gray-300'}`}
               placeholder="Enter recipe title"
+              aria-required="true"
+              aria-invalid={errors.title ? 'true' : 'false'}
+              aria-describedby={errors.title ? 'title-error' : undefined}
             />
-            {errors.title && <p className="mt-1 text-sm text-red-600">{errors.title}</p>}
+            {errors.title && (
+              <p id="title-error" className="mt-1 text-sm text-red-600">
+                {errors.title}
+              </p>
+            )}
           </div>
 
           <div>
-            <label htmlFor="ingredients" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label
+              htmlFor="ingredients"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+            >
               Ingredients * (one per line, at least 2)
             </label>
             <textarea
@@ -140,16 +153,24 @@ function AddRecipeForm() {
               value={formData.ingredients}
               onChange={handleChange}
               rows={6}
-              className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 ${
-                errors.ingredients ? 'border-red-500' : 'border-gray-300'
-              }`}
-              placeholder="Enter each ingredient on a new line&#10;e.g.&#10;200g spaghetti&#10;100g pancetta"
+              className={`${inputClassNames} ${errors.ingredients ? 'border-red-500' : 'border-gray-300'}`}
+              placeholder={`Enter each ingredient on a new line\n e.g.\n 200g spaghetti\n 100g pancetta`}
+              aria-required="true"
+              aria-invalid={errors.ingredients ? 'true' : 'false'}
+              aria-describedby={errors.ingredients ? 'ingredients-error' : undefined}
             />
-            {errors.ingredients && <p className="mt-1 text-sm text-red-600">{errors.ingredients}</p>}
+            {errors.ingredients && (
+              <p id="ingredients-error" className="mt-1 text-sm text-red-600">
+                {errors.ingredients}
+              </p>
+            )}
           </div>
 
           <div>
-            <label htmlFor="instructions" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label
+              htmlFor="instructions"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+            >
               Preparation Steps *
             </label>
             <textarea
@@ -158,15 +179,20 @@ function AddRecipeForm() {
               value={formData.instructions}
               onChange={handleChange}
               rows={8}
-              className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 ${
-                errors.instructions ? 'border-red-500' : 'border-gray-300'
-              }`}
-              placeholder="Enter each step on a new line&#10;e.g.&#10;Cook spaghetti in salted boiling water until al dente.&#10;Fry pancetta until crispy."
+              className={`${inputClassNames} ${errors.instructions ? 'border-red-500' : 'border-gray-300'}`}
+              placeholder={`Enter each step on a new line\n e.g.\n Cook spaghetti in salted boiling water until al dente.\n Fry pancetta until crispy.`}
+              aria-required="true"
+              aria-invalid={errors.instructions ? 'true' : 'false'}
+              aria-describedby={errors.instructions ? 'instructions-error' : undefined}
             />
-            {errors.instructions && <p className="mt-1 text-sm text-red-600">{errors.instructions}</p>}
+            {errors.instructions && (
+              <p id="instructions-error" className="mt-1 text-sm text-red-600">
+                {errors.instructions}
+              </p>
+            )}
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex flex-col items-center">
             <button
               type="submit"
               disabled={isSubmitting}
@@ -176,6 +202,11 @@ function AddRecipeForm() {
             >
               {isSubmitting ? 'Submitting...' : 'Submit Recipe'}
             </button>
+            {successMessage && (
+              <p className="mt-4 text-green-600 font-semibold" role="alert">
+                {successMessage}
+              </p>
+            )}
           </div>
         </form>
       </div>
