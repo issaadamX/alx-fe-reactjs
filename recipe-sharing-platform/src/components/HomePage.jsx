@@ -21,6 +21,14 @@ function HomePage() {
       <h1 className="text-4xl font-bold mb-8 text-center text-gray-900 dark:text-white">
         Recipe Sharing Platform
       </h1>
+      <div className="text-center mb-8">
+        <Link
+          to="/add-recipe"
+          className="inline-block px-6 py-3 bg-indigo-600 text-white font-medium rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+        >
+          Add New Recipe
+        </Link>
+      </div>
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {recipes.map(({ id, title, summary, image }) => (
           <div
