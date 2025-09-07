@@ -9,18 +9,19 @@ import BlogPost from './components/BlogPost';
 import Login from './components/Login';
 import ProtectedRoute from './components/ProtectedRoute';
 import Nav from './components/Nav';
+import { useAuth } from './hooks/useAuth';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { isLoggedIn } = useAuth();
 
   return (
     <Router>
       <div className="App">
-        <Nav isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+        <Nav isLoggedIn={isLoggedIn} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/blog/:id" element={<BlogPost />} />
-          <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/profile" element={
             <ProtectedRoute isLoggedIn={isLoggedIn}>
               <Profile />
