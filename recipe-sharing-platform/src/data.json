@@ -3,36 +3,133 @@
     "id": 1,
     "title": "Spaghetti Carbonara",
     "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-    "image": "https://via.placeholder.com/300x200?text=Spaghetti+Carbonara"
+    "image": "https://via.placeholder.com/300x200?text=Spaghetti+Carbonara",
+    "ingredients": [
+      "200g spaghetti",
+      "100g pancetta or bacon",
+      "2 large eggs",
+      "50g grated Parmesan cheese",
+      "Black pepper",
+      "Salt"
+    ],
+    "instructions": [
+      "Cook spaghetti in salted boiling water until al dente.",
+      "Fry pancetta until crispy.",
+      "Whisk eggs with Parmesan and pepper.",
+      "Drain pasta, mix with pancetta, then add egg mixture off heat.",
+      "Serve immediately with extra cheese and pepper."
+    ]
   },
   {
     "id": 2,
     "title": "Chicken Tikka Masala",
     "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-    "image": "https://via.placeholder.com/300x200?text=Chicken+Tikka+Masala"
+    "image": "https://via.placeholder.com/300x200?text=Chicken+Tikka+Masala",
+    "ingredients": [
+      "500g chicken breast, cubed",
+      "1 cup yogurt",
+      "2 tbsp tikka masala spice",
+      "1 onion, chopped",
+      "2 tomatoes, chopped",
+      "1 cup cream",
+      "2 tbsp butter",
+      "Salt and pepper"
+    ],
+    "instructions": [
+      "Marinate chicken in yogurt and spices for 1 hour.",
+      "Grill or bake chicken until cooked.",
+      "Sauté onion in butter, add tomatoes and spices.",
+      "Add grilled chicken and cream, simmer for 10 minutes.",
+      "Serve with rice or naan."
+    ]
   },
   {
     "id": 3,
     "title": "Beef Stroganoff",
     "summary": "Tender strips of beef served in a rich, creamy mushroom sauce over egg noodles.",
-    "image": "https://via.placeholder.com/300x200?text=Beef+Stroganoff"
+    "image": "https://via.placeholder.com/300x200?text=Beef+Stroganoff",
+    "ingredients": [
+      "500g beef strips",
+      "200g mushrooms, sliced",
+      "1 onion, chopped",
+      "2 tbsp flour",
+      "1 cup beef broth",
+      "1 cup sour cream",
+      "2 tbsp butter",
+      "Salt and pepper"
+    ],
+    "instructions": [
+      "Brown beef in butter, set aside.",
+      "Sauté onion and mushrooms.",
+      "Add flour, then broth, simmer.",
+      "Return beef, add sour cream, heat through.",
+      "Serve over noodles."
+    ]
   },
   {
     "id": 4,
     "title": "Vegetable Stir Fry",
     "summary": "A colorful mix of fresh vegetables stir-fried with soy sauce and ginger.",
-    "image": "https://via.placeholder.com/300x200?text=Vegetable+Stir+Fry"
+    "image": "https://via.placeholder.com/300x200?text=Vegetable+Stir+Fry",
+    "ingredients": [
+      "1 bell pepper, sliced",
+      "1 carrot, julienned",
+      "1 cup broccoli florets",
+      "1 zucchini, sliced",
+      "2 tbsp soy sauce",
+      "1 tbsp ginger, minced",
+      "2 garlic cloves, minced",
+      "2 tbsp oil"
+    ],
+    "instructions": [
+      "Heat oil in wok or pan.",
+      "Add garlic and ginger, stir for 30 seconds.",
+      "Add vegetables, stir-fry for 5-7 minutes.",
+      "Add soy sauce, cook for another 2 minutes.",
+      "Serve hot with rice."
+    ]
   },
   {
     "id": 5,
     "title": "Chocolate Lava Cake",
     "summary": "Decadent chocolate cake with a molten chocolate center, served warm with vanilla ice cream.",
-    "image": "https://via.placeholder.com/300x200?text=Chocolate+Lava+Cake"
+    "image": "https://via.placeholder.com/300x200?text=Chocolate+Lava+Cake",
+    "ingredients": [
+      "100g dark chocolate",
+      "50g butter",
+      "2 eggs",
+      "50g sugar",
+      "2 tbsp flour",
+      "Pinch of salt"
+    ],
+    "instructions": [
+      "Melt chocolate and butter.",
+      "Whisk eggs with sugar, add to chocolate mixture.",
+      "Fold in flour and salt.",
+      "Pour into ramekins, bake at 200°C for 10-12 minutes.",
+      "Serve immediately with ice cream."
+    ]
   },
   {
     "id": 6,
     "title": "Mediterranean Salad",
     "summary": "Fresh tomatoes, cucumbers, olives, and feta cheese with olive oil dressing.",
-    "image": "https://via.placeholder.com/300x200?text=Mediterranean+Salad"
+    "image": "https://via.placeholder.com/300x200?text=Mediterranean+Salad",
+    "ingredients": [
+      "2 tomatoes, chopped",
+      "1 cucumber, sliced",
+      "100g feta cheese, cubed",
+      "50g olives",
+      "1 red onion, sliced",
+      "2 tbsp olive oil",
+      "1 tbsp lemon juice",
+      "Salt and pepper"
+    ],
+    "instructions": [
+      "Combine all vegetables and feta in a bowl.",
+      "Whisk olive oil, lemon juice, salt, and pepper.",
+      "Pour dressing over salad, toss gently.",
+      "Let sit for 10 minutes before serving."
+    ]
   }
 ]

@@ -11,3 +11,18 @@
 - [x] Update src/App.jsx to render HomePage component
 - [ ] Test responsive design on different screen sizes
 - [ ] Verify Tailwind CSS styling is applied correctly
+
+## Recipe Detail Page Development
+
+## Tasks
+- [x] Install react-router-dom dependency
+- [x] Update src/data.json with ingredients and instructions
+- [x] Create src/components/RecipeDetail.jsx component
+  - [x] Fetch recipe data based on ID from URL
+  - [x] Display detailed recipe info (title, summary, image, ingredients, instructions)
+  - [x] Style with Tailwind CSS for responsive design
+  - [x] Add back navigation to Home Page
+- [x] Update src/App.jsx to set up routing with BrowserRouter, Routes, and Route
+- [x] Update src/components/HomePage.jsx to use Link for navigation
+- [ ] Test navigation from Home Page to Recipe Detail Page
+- [ ] Verify responsive design and styling on Recipe Detail Page
