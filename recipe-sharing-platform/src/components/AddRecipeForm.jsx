@@ -2,26 +2,44 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function AddRecipeForm() {
+  // State to hold form data
   const [formData, setFormData] = useState({
     title: '',
     ingredients: '',
     instructions: ''
   });
+
+  // State to hold validation errors
   const [errors, setErrors] = useState({});
+
+  // State to track form submission status
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // State to show success message after submission
+  const [successMessage, setSuccessMessage] = useState('');
+
+  // Common input classes for styling with Tailwind CSS
+  const inputClassNames = `w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500`;
+
+  // Handle input changes and update form data state
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
-    // Clear error when user starts typing
+
+    // Clear error for the field when user starts typing
     if (errors[name]) {
       setErrors(prev => ({
         ...prev,
         [name]: ''
       }));
+    }
+
+    // Clear success message on any input change
+    if (successMessage) {
+      setSuccessMessage('');
     }
   };
 
