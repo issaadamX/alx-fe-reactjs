@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Spaghetti Carbonara",
+    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+    "image": "https://via.placeholder.com/300x200?text=Spaghetti+Carbonara"
+  },
+  {
+    "id": 2,
+    "title": "Chicken Tikka Masala",
+    "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
+    "image": "https://via.placeholder.com/300x200?text=Chicken+Tikka+Masala"
+  },
+  {
+    "id": 3,
+    "title": "Beef Stroganoff",
+    "summary": "Tender strips of beef served in a rich, creamy mushroom sauce over egg noodles.",
+    "image": "https://via.placeholder.com/300x200?text=Beef+Stroganoff"
+  },
+  {
+    "id": 4,
+    "title": "Vegetable Stir Fry",
+    "summary": "A colorful mix of fresh vegetables stir-fried with soy sauce and ginger.",
+    "image": "https://via.placeholder.com/300x200?text=Vegetable+Stir+Fry"
+  },
+  {
+    "id": 5,
+    "title": "Chocolate Lava Cake",
+    "summary": "Decadent chocolate cake with a molten chocolate center, served warm with vanilla ice cream.",
+    "image": "https://via.placeholder.com/300x200?text=Chocolate+Lava+Cake"
+  },
+  {
+    "id": 6,
+    "title": "Mediterranean Salad",
+    "summary": "Fresh tomatoes, cucumbers, olives, and feta cheese with olive oil dressing.",
+    "image": "https://via.placeholder.com/300x200?text=Mediterranean+Salad"
+  }
+]
