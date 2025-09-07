@@ -11,13 +11,13 @@ const RegistrationForm = () => {
     e.preventDefault();
     const newErrors = {};
 
-    if (!username.trim()) {
+    if (!username) {
       newErrors.username = 'Username is required';
     }
-    if (!email.trim()) {
+    if (!email) {
       newErrors.email = 'Email is required';
     }
-    if (!password.trim()) {
+    if (!password) {
       newErrors.password = 'Password is required';
     }
 
